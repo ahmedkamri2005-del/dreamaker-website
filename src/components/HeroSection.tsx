@@ -63,8 +63,8 @@ export default function HeroSection() {
                     className="absolute inset-0 w-full h-full object-cover z-0"
                 >
                     <source
-                        src="/videos/video1.mp4"
-                        type="video/mp4"
+                        src="/videos/video1.webm"
+                        type="video/webm"
                     />
                     Your browser does not support the video tag.
                 </video>

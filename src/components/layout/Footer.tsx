@@ -7,9 +7,9 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-6 md:gap-12 text-left mb-8 md:mb-16 relative z-10">
                     {/* Column 1: Contact Information */}
-                    <div className="flex flex-col h-full">
+                    <div className="flex flex-col justify-between h-full">
                         <h4 className="text-xs md:text-sm text-[#4A90E2] font-bold tracking-widest uppercase mb-3">CONTACT US</h4>
-                        <div className="text-gray-600 text-[11px] md:text-sm flex flex-col gap-2 md:gap-4 font-sans leading-relaxed mt-auto">
+                        <div className="text-gray-600 text-[13px] md:text-sm flex flex-col justify-between flex-1 font-medium font-sans leading-relaxed">
                             <p className="leading-relaxed">
                                 115 Rue de la Yougoslavie, Apt. 9<br />
                                 Marrakech 40000, Morocco
@@ -17,14 +17,14 @@ export default function Footer() {
                             <a href="https://wa.me/212661257326" target="_blank" rel="noopener noreferrer" className="hover:text-[#4A90E2] transition-colors w-fit">
                                 +212 661 257 326
                             </a>
-                            <a href="mailto:contact@dreamakerproductions.com" className="hover:text-[#4A90E2] transition-colors w-fit">
+                            <a href="mailto:contact@dreamakerproductions.com" className="hover:text-[#4A90E2] transition-colors w-fit text-[10px] md:text-sm">
                                 contact@dreamakerproductions.com
                             </a>
                         </div>
                     </div>
 
                     {/* Column 2: Social Media */}
-                    <div>
+                    <div className="flex flex-col justify-between h-full">
                         <h4 className="text-xs md:text-sm text-[#4A90E2] font-bold tracking-widest uppercase mb-3">SOCIALS</h4>
                         <div className="flex flex-col items-start">
                             {/* Constrained wrapper — icons + buttons share this width */}
