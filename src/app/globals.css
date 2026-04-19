@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cinematic-charcoal: #1A1A1A;
+  --color-dream-blue: #0057FF;
+  --color-pure-white: #FFFFFF;
+  --color-text-gray: #E0E0E0;
+
+  --font-sans: var(--font-custom), ui-sans-serif, system-ui, sans-serif;
+  --font-grotesque: "Neutral Face", var(--font-oswald), sans-serif;
+  --font-heading: var(--font-syncopate);
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 25s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+
+  body,
+  p,
+  span,
+  div {
+    @apply font-sans font-normal;
+  }
+
+  /* Uses NeueKabel.otf (400) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-bold;
+  }
+
+  /* Uses NeueKabel-Bold.otf (700) */
+  button,
+  a[role="button"],
+  .btn {
+    @apply font-sans font-extrabold tracking-wide uppercase;
+  }
+
+  /* Uses NeueKabel-ExtraBold.otf (800) */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
   }
 }
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a1a;
+  color: var(--color-text-gray);
+  margin: 0;
+  padding: 0;
 }
