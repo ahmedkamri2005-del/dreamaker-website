@@ -28,27 +28,27 @@ export default function HeroSection() {
             {/* Premium Typography Content */}
             <div className="relative z-20 text-white">
                 {/* Kicker */}
-                <p className="uppercase tracking-[0.3em] text-xs lg:text-sm text-gray-300 mb-4 animate-fade-in">
+                <p className="uppercase tracking-[0.3em] text-[10px] lg:text-xs text-gray-300 mb-3 animate-fade-in">
                     Your Trusted Production Partner
                 </p>
 
                 {/* Main Headline */}
-                <h1 className="text-5xl lg:text-7xl font-light mb-6 leading-tight max-w-4xl tracking-tight">
+                <h1 className="text-3xl lg:text-5xl font-light mb-4 leading-tight max-w-2xl tracking-tight">
                     Elevating Global Narratives <br className="hidden md:block" /> in Morocco.
                 </h1>
 
                 {/* Description */}
-                <p className="text-lg lg:text-xl text-gray-400 font-light max-w-2xl mb-10 leading-relaxed">
+                <p className="text-sm lg:text-base text-gray-400 font-light max-w-xl mb-8 leading-relaxed">
                     Providing flawless logistical architecture, exclusive location access, and international-standard crew support for studios and agencies worldwide.
                 </p>
 
                 {/* High-End CTA */}
                 <Link
                     href="#"
-                    className="inline-flex items-center gap-4 px-8 py-4 border border-white/30 hover:bg-white hover:text-black transition-all duration-500 uppercase tracking-widest text-sm backdrop-blur-sm group"
+                    className="inline-flex items-center gap-3 px-6 py-3 border border-white/30 hover:bg-white hover:text-black transition-all duration-500 uppercase tracking-widest text-[10px] font-semibold backdrop-blur-sm group"
                 >
                     Discuss Your Project
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
             </div>
         </section>
