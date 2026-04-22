@@ -1,81 +1,94 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { WorldMap } from './ui/world-map';
 
-const productionHubs = [
-    // CENTRAL MOROCCO HUB
-    {
-        id: "morocco-hub",
-        city: "Morocco Hub",
-        top: "32.2%",
-        left: "48.7%",
-        project: "Emmy-Award Winning Support",
-        client: "Warner Bros / Netflix / BBC",
-        gallery: ["/projects/ouarzazate-shoot.jpg", "/projects/marrakech-commercial.jpg", "/projects/casablanca-urban.jpg", "/projects/desert-natgeo.jpg"],
-        hasGallery: true,
-        isHub: true
-    },
-
-    // GLOBAL PARTNER OFFICES
-    { id: 1, city: "Los Angeles", top: "37.5%", left: "18.5%", hasGallery: false, isHub: false },
-    { id: 2, city: "New York", top: "32%", left: "26%", hasGallery: false, isHub: false },
-    { id: 3, city: "London", top: "18.5%", left: "47.8%", hasGallery: false, isHub: false },
-    { id: 4, city: "Paris", top: "21.6%", left: "50.7%", hasGallery: false, isHub: false },
-    { id: 5, city: "Moscow", top: "18.1%", left: "54.7%", hasGallery: false, isHub: false },
-    { id: 6, city: "Beijing", top: "29.2%", left: "77.5%", hasGallery: false, isHub: false },
-    { id: 7, city: "Tokyo", top: "30.7%", left: "86.7%", hasGallery: false, isHub: false },
-    { id: 8, city: "Dubai", top: "39.3%", left: "64.8%", hasGallery: false, isHub: false },
-    { id: 9, city: "Sao Paulo", top: "70%", left: "37%", hasGallery: false, isHub: false },
-    { id: 10, city: "Sydney", top: "79.4%", left: "91%", hasGallery: false, isHub: false },
-    { id: 11, city: "Cape Town", top: "84%", left: "57.5%", hasGallery: false, isHub: false },
+const globalHubs = [
+    { name: 'Los Angeles', img: '/locali/lose.angels.jpg' },
+    { name: 'London', img: '/locali/london.jpeg' },
+    { name: 'Paris', img: '/locali/paris.jpg' },
+    { name: 'Dubai', img: '/locali/dubai.jpg' },
+    { name: 'Cape Town', img: '/locali/cape%20town.jpeg' },
 ];
 
 export default function LocationsSection() {
-    const [activeLocation, setActiveLocation] = useState<string | number | null>(null);
+    const [hoveredCity, setHoveredCity] = useState<number | null>(null);
 
     return (
-        <section id="locations" className="bg-white relative w-full pt-12 pb-8 overflow-hidden scroll-mt-20">
-            <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "100px 0px 100px 0px", amount: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="max-w-7xl mx-auto px-6 relative z-10"
-            >
-                {/* Fixed Header */}
-                <div className="text-center mb-6 pb-4 md:pb-8 relative z-20">
-                    <motion.p
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 0.5, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="text-gray-600 text-xs md:text-sm tracking-[0.3em] uppercase font-bold mb-4"
-                    >
-                        GLOBAL REACH, LOCAL EXPERTISE
-                    </motion.p>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 15 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10 tracking-tight"
-                    >
-                        Our Production Network
-                    </motion.h2>
-                </div>
+        <section className="relative w-full min-h-[80vh] flex items-center justify-center bg-black overflow-hidden py-32">
 
-                {/* World Map Container - Locked Aspect Ratio */}
-                <div className="relative w-full aspect-[2/1] lg:aspect-[21/9] max-w-6xl mx-auto overflow-visible transition-all duration-500">
-                    <WorldMap
-                        hubs={productionHubs}
-                        activeId={activeLocation}
-                        onHover={(id) => setActiveLocation(id)}
+            {/* Background Image Layer — crossfades per hovered city */}
+            {globalHubs.map((hub, index) => (
+                <div key={hub.name} className="absolute inset-0">
+                    <Image
+                        src={hub.img}
+                        alt={hub.name}
+                        fill
+                        sizes="100vw"
+                        className={`object-cover transition-all duration-1000 ease-in-out ${hoveredCity === index
+                            ? 'opacity-40 scale-105'
+                            : 'opacity-0 scale-100'
+                            }`}
                     />
                 </div>
-            </motion.div>
+            ))}
 
+            {/* Subtle vignette overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60 pointer-events-none z-[1]" />
+
+            {/* Foreground typographic roster */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">
+
+                {/* Section label */}
+                <motion.h3
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                    className="uppercase tracking-[0.3em] text-xs font-semibold text-gray-400 mb-16 text-center"
+                >
+                    Global Reach, Local Expertise
+                </motion.h3>
+
+                {/* City typographic list */}
+                <div className="flex flex-col items-center w-full">
+                    {globalHubs.map((hub, index) => (
+                        <motion.div
+                            key={hub.name}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: index * 0.08 }}
+                            onMouseEnter={() => setHoveredCity(index)}
+                            onMouseLeave={() => setHoveredCity(null)}
+                            className="cursor-pointer py-2 lg:py-4 w-full text-center group"
+                        >
+                            <h2
+                                className={`text-5xl lg:text-8xl font-light uppercase tracking-tight transition-colors duration-500 select-none ${hoveredCity === index
+                                    ? 'text-white'
+                                    : hoveredCity === null
+                                        ? 'text-gray-500'
+                                        : 'text-gray-800'
+                                    }`}
+                            >
+                                {hub.name}
+                            </h2>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Bottom descriptor */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="mt-20 text-[11px] uppercase tracking-[0.4em] text-gray-600 text-center"
+                >
+                    Morocco · Est. 2010 · 50+ Active Partnerships
+                </motion.p>
+            </div>
         </section>
     );
 }

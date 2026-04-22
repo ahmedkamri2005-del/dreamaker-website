@@ -29,7 +29,7 @@ export default function ProductionPage() {
 
                 {/* ── RIGHT COLUMN: White — Image ── */}
                 <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 md:p-16 pt-32 lg:pt-32">
-                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none overflow-hidden shadow-2xl">
+                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
                         <Image
                             src="/images/dreamaker-director-view.jpg"
                             alt="Director View"
@@ -50,7 +50,7 @@ export default function ProductionPage() {
                 {/* ── LEFT COLUMN: White — Techno Cranes ── */}
                 <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center items-center py-8 lg:py-12 px-8">
                     {/* Leaf-shaped bordered frame */}
-                    <div className="w-full max-w-[350px] lg:max-w-[380px] aspect-square border-[6px] border-[#214151] rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none flex items-center justify-center p-4 bg-white overflow-hidden">
+                    <div className="w-full max-w-[350px] lg:max-w-[380px] aspect-square border-[6px] border-[#214151] rounded-sm flex items-center justify-center p-4 bg-white overflow-hidden">
                         <Image
                             src="/material/img104.jpg"
                             alt="Techno Cranes"
@@ -76,7 +76,7 @@ export default function ProductionPage() {
 
                         {/* Item 1 — Camera Packages */}
                         <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none flex items-center justify-center p-2 overflow-hidden">
+                            <div className="w-full aspect-square bg-white rounded-sm flex items-center justify-center p-2 overflow-hidden">
                                 <Image
                                     src="/material/dreamaker-camera-packages.jpg"
                                     alt="Camera Packages"
@@ -92,7 +92,7 @@ export default function ProductionPage() {
 
                         {/* Item 2 — Lenses */}
                         <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none flex items-center justify-center p-2 overflow-hidden">
+                            <div className="w-full aspect-square bg-white rounded-sm flex items-center justify-center p-2 overflow-hidden">
                                 <Image
                                     src="/material/dreamaker-lenses.jpg"
                                     alt="Lenses"
@@ -108,7 +108,7 @@ export default function ProductionPage() {
 
                         {/* Item 3 — Dollies */}
                         <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none flex items-center justify-center p-2 overflow-hidden">
+                            <div className="w-full aspect-square bg-white rounded-sm flex items-center justify-center p-2 overflow-hidden">
                                 <Image
                                     src="/material/dreamaker-dollies.jpg"
                                     alt="Dollies"
@@ -151,7 +151,7 @@ export default function ProductionPage() {
                     </p>
                 </div>
 
-                <div className="relative w-full h-[500px] rounded-tl-[120px] rounded-br-[120px] overflow-hidden group border border-gray-800 shadow-2xl">
+                <div className="relative w-full h-[500px] rounded-sm overflow-hidden group border border-gray-800 shadow-2xl">
                     <Image
                         src="/images/dreamaker-action-logistics.jpg"
                         alt="Action Logistics"
@@ -171,7 +171,7 @@ export default function ProductionPage() {
             <div className="flex justify-center pb-24">
                 <Link
                     href="/contact"
-                    className="inline-block px-10 py-4 bg-transparent text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-tl-[20px] rounded-br-[20px] rounded-tr-none rounded-bl-none transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-[0_0_20px_rgba(82,180,229,0.1)] hover:shadow-[0_0_40px_rgba(82,180,229,0.3)]"
+                    className="inline-block px-10 py-4 bg-transparent text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-sm transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-[0_0_20px_rgba(82,180,229,0.1)] hover:shadow-[0_0_40px_rgba(82,180,229,0.3)]"
                 >
                     INITIALIZE PRODUCTION
                 </Link>

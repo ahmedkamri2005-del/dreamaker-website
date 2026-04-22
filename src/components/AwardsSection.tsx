@@ -3,93 +3,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import Image from 'next/image';
+
 export default function AwardsSection() {
     return (
-        <section className="bg-white pt-24 pb-10 overflow-hidden relative">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section className="w-full py-20 bg-[#fafafa] lg:px-20 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                {/* Left Column: Text & Stats */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "100px 0px 100px 0px", amount: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="flex flex-col text-left items-start"
-                >
-                    <span className="text-gray-500 uppercase tracking-[0.3em] text-[10px] md:text-sm font-semibold">
-                        PROVEN EXCELLENCE
-                    </span>
+                {/* Left Column: Refined Typography & Stats */}
+                <div className="flex flex-col text-left items-start z-10 w-full">
+                    {/* Kicker */}
+                    <h3 className="uppercase tracking-[0.2em] text-[10px] md:text-xs font-semibold text-gray-400 mb-6 transition-all duration-700">
+                        Proven Excellence
+                    </h3>
 
-                    <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 text-left mb-10 leading-tight tracking-tight">
-                        Award-Winning <br />
-                        Production Support <br />
-                        Since 1999.
+                    {/* Main Headline */}
+                    <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight max-w-xl mb-12">
+                        Award-Winning Production Support Since 1999.
                     </h2>
 
-                    <div className="flex flex-wrap gap-10 md:gap-16">
+                    {/* Stats Grid */}
+                    <div className="flex gap-12 lg:gap-20">
                         {/* Stat 1 */}
-                        <div className="flex flex-col gap-1.5">
-                            <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter">
-                                25+
-                            </span>
-                            <span className="text-[10px] md:text-sm text-gray-500 uppercase tracking-widest font-semibold">
-                                Years
-                            </span>
+                        <div className="flex flex-col">
+                            <p className="text-5xl lg:text-6xl font-light text-black mb-2">25+</p>
+                            <p className="uppercase tracking-widest text-[10px] lg:text-xs text-gray-500 font-medium whitespace-nowrap">Years</p>
                         </div>
 
                         {/* Stat 2 */}
-                        <div className="flex flex-col gap-1.5">
-                            <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter">
-                                500+
-                            </span>
-                            <span className="text-[10px] md:text-sm text-gray-500 uppercase tracking-widest font-semibold">
-                                Projects
-                            </span>
+                        <div className="flex flex-col">
+                            <p className="text-5xl lg:text-6xl font-light text-black mb-2">500+</p>
+                            <p className="uppercase tracking-widest text-[10px] lg:text-xs text-gray-500 font-medium whitespace-nowrap">Projects</p>
                         </div>
 
                         {/* Stat 3 */}
-                        <div className="flex flex-col gap-1.5">
-                            <span className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter">
-                                1
-                            </span>
-                            <span className="text-[10px] md:text-sm text-gray-500 uppercase tracking-widest font-semibold">
-                                Emmy® Award
-                            </span>
+                        <div className="flex flex-col">
+                            <p className="text-5xl lg:text-6xl font-light mb-2 text-black">1</p>
+                            <p className="uppercase tracking-widest text-[10px] lg:text-xs text-gray-500 font-medium whitespace-nowrap">Emmy® Award</p>
                         </div>
                     </div>
-                </motion.div>
+                </div>
 
-                {/* Right Column: Emmy Trophy Placeholder & Glow */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "100px 0px 100px 0px", amount: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                    className="relative flex justify-center items-center group"
-                >
-                    {/* Golden Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#4A90E2]/10 blur-[80px] rounded-full pointer-events-none transition-all duration-700 group-hover:bg-[#4A90E2]/25 group-hover:w-96 group-hover:h-96"></div>
-
-                    {/* Trophy Image */}
-                    <motion.img
+                {/* Right Column: Emmy Trophy Presentation */}
+                <div className="relative w-[300px] h-[400px] ml-auto animate-float">
+                    {/* Trophy Image - Restored with fill and object-contain */}
+                    <Image
                         src="/emmy-trophy.png"
-                        alt="Emmy Award Trophy"
-                        className="relative z-10 w-full max-w-sm mx-auto h-auto object-contain drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] cursor-pointer"
-                        animate={{
-                            y: [0, -20, 0],
-                        }}
-                        transition={{
-                            duration: 6,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                        whileHover={{
-                            scale: 1.08,
-                            rotate: 2,
-                            transition: { duration: 0.4, ease: "easeOut" }
-                        }}
+                        alt="Emmy Award"
+                        fill
+                        className="object-contain"
                     />
-                </motion.div>
+                </div>
             </div>
         </section>
     );

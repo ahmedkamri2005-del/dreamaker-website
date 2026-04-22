@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Oswald } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import FloatingChatbot from "@/components/FloatingChatbot";
+import GlobalUIWrapper from "@/components/layout/GlobalUIWrapper";
 
 const neueKabel = localFont({
   src: [
@@ -32,6 +31,10 @@ export const metadata: Metadata = {
   },
 };
 
+import Navbar from "@/components/layout/Navbar";
+import FloatingChatbot from "@/components/FloatingChatbot";
+import SmoothScroll from "@/components/SmoothScroll";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,9 +46,10 @@ export default function RootLayout({
       className={`${inter.variable} ${oswald.variable} ${neueKabel.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#1A1A1A]">
-        <Navbar />
-        {children}
-        <FloatingChatbot />
+        <SmoothScroll>
+          <GlobalUIWrapper />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

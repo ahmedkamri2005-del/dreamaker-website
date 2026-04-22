@@ -18,7 +18,7 @@ const videos = [
     {
         id: "video1",
         title: "Production Highlights",
-        src: "/videos/video1.mp4",
+        src: "/videos/video1.webm",
     }
 ];
 
@@ -46,31 +46,32 @@ export default function CinematicJourneySection() {
 
     const handleThumbnailClick = (video: typeof videos[0]) => {
         setActiveVideo(video);
-        setIsPlaying(true); // new video always starts playing
+        setIsPlaying(true);
     };
 
     return (
-        <section className="bg-white pt-20 pb-24 px-6 relative overflow-visible">
+        <section className="py-32 bg-white text-black relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="max-w-7xl mx-auto"
             >
                 {/* Header */}
-                <div className="text-center mb-10 px-4">
-                    <span className="text-[#4A90E2] text-xs md:text-sm font-bold tracking-[0.4em] uppercase block mb-4">Theater Experience</span>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10 tracking-tight">
-                        Cinematic Showreel
+                <div className="text-center mb-20 px-6">
+                    <h3 className="uppercase tracking-[0.3em] text-xs font-semibold text-gray-500 mb-4 text-center">
+                        Theater Experience
+                    </h3>
+                    <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-20 text-center">
+                        Cinematic Showreel.
                     </h2>
                 </div>
 
-                {/* Split Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 h-[65vh] min-h-[400px] overflow-hidden">
+                {/* Player Grid */}
+                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
 
-                    {/* ── Left: Main Video Player (3/4 width) ── */}
-                    <div className="col-span-1 lg:col-span-3 relative w-full h-full shadow-2xl overflow-hidden rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none bg-black border border-white/5">
+                    {/* Main Video — 8 cols */}
+                    <div className="col-span-1 lg:col-span-8 relative w-full aspect-[16/10] bg-black rounded-lg overflow-hidden shadow-xl ring-1 ring-gray-200">
                         <video
                             ref={videoRef}
                             key={activeVideo.src}
@@ -82,69 +83,59 @@ export default function CinematicJourneySection() {
                             className="absolute inset-0 w-full h-full object-cover"
                         />
 
-
-
-                        {/* ── Custom Controls Overlay ── */}
-                        <div className="absolute bottom-6 right-6 flex items-center gap-4 z-20">
-                            {/* Play / Pause */}
+                        {/* Controls */}
+                        <div className="absolute bottom-5 right-5 flex items-center gap-3 z-20">
                             <button
                                 onClick={togglePlay}
                                 aria-label={isPlaying ? 'Pause' : 'Play'}
-                                className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-[#4A90E2] transition-all duration-300 cursor-pointer"
+                                className="flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-white hover:border-white/50 transition-all duration-300 cursor-pointer"
                             >
-                                {isPlaying ? <Pause size={18} /> : <Play size={18} />}
+                                {isPlaying ? <Pause size={16} /> : <Play size={16} />}
                             </button>
-
-                            {/* Mute / Unmute */}
                             <button
                                 onClick={toggleMute}
                                 aria-label={isMuted ? 'Unmute' : 'Mute'}
-                                className="flex items-center justify-center w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white hover:bg-[#4A90E2] transition-all duration-300 cursor-pointer"
+                                className="flex items-center justify-center w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/15 text-white hover:border-white/50 transition-all duration-300 cursor-pointer"
                             >
-                                {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                                {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
                             </button>
                         </div>
                     </div>
 
-                    {/* ── Right: Vertical Thumbnail List (1/4 width) ── */}
-                    <div className="col-span-1 flex flex-col gap-3 h-full overflow-hidden">
-                        {videos.map((video) => (
-                            <div
-                                key={video.id}
-                                onClick={() => handleThumbnailClick(video)}
-                                className="group relative flex-1 overflow-hidden rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none cursor-pointer shadow-md transition-all duration-300 border-2 border-transparent hover:border-[#4A90E2]"
-                                style={{
-                                    borderColor: activeVideo.id === video.id ? '#4A90E2' : undefined,
-                                    opacity: activeVideo.id === video.id ? 1 : 0.8,
-                                }}
-                            >
-                                <video
-                                    src={video.src}
-                                    muted
-                                    autoPlay
-                                    loop
-                                    playsInline
-                                    className="absolute inset-0 w-full h-full object-cover group-hover:opacity-100 transition-opacity duration-300"
-                                    style={{ opacity: activeVideo.id === video.id ? 1 : 0.8 }}
-                                />
-
-                                {/* Title Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
-                                    <p className="text-white text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                                        {video.title}
-                                    </p>
+                    {/* Playlist — 4 cols */}
+                    <div className="col-span-1 lg:col-span-4 flex flex-col justify-between h-full space-y-4">
+                        {videos.map((video) => {
+                            const isActive = activeVideo.id === video.id;
+                            return (
+                                <div
+                                    key={video.id}
+                                    onClick={() => handleThumbnailClick(video)}
+                                    className={`relative w-full flex-1 rounded-md overflow-hidden cursor-pointer transition-all duration-500 ${isActive
+                                        ? 'ring-1 ring-gray-400 shadow-md opacity-100'
+                                        : 'opacity-60 grayscale hover:grayscale-0 hover:opacity-100 ring-1 ring-gray-200'
+                                        }`}
+                                >
+                                    <video
+                                        src={video.src}
+                                        muted
+                                        autoPlay
+                                        loop
+                                        playsInline
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                    />
+                                    {/* Title overlay */}
+                                    <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 to-transparent">
+                                        <p className="text-xs uppercase tracking-widest text-white font-medium">
+                                            {video.title}
+                                        </p>
+                                    </div>
                                 </div>
-
-
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
 
                 </div>
             </motion.div>
-
-            {/* Ambient Glow */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-500/5 blur-[120px] pointer-events-none -z-10" />
         </section>
     );
 }

@@ -57,9 +57,9 @@ export function WorldMap({ hubs, activeId, onHover }: WorldMapProps) {
                             key={`arc-final-${partner.id}`}
                             d={path}
                             fill="none"
-                            stroke="#4A90E2"
-                            strokeWidth="0.15"
-                            strokeOpacity="0.8"
+                            stroke="#9ca3af"
+                            strokeWidth="0.4"
+                            strokeOpacity="0.6"
                             initial={{ pathLength: 0 }}
                             animate={{ pathLength: 1 }}
                             transition={{ duration: 3, delay: i * 0.1 }}
@@ -82,25 +82,31 @@ export function WorldMap({ hubs, activeId, onHover }: WorldMapProps) {
                         )}
                         style={{ left: hub.left, top: hub.top }}
                     >
-                        {/* Branded Marker (Logo) */}
+                        {/* Marker */}
                         <div
                             className="relative group p-6 -m-6 cursor-pointer"
                             onMouseEnter={() => onHover(hub.id)}
                             onMouseLeave={() => onHover(null)}
                         >
-                            {/* The Logo In Marker */}
-                            <motion.div
-                                animate={{
-                                    scale: isActive ? 1.25 : 1,
-                                    opacity: isActive ? 1 : (hub.isHub ? 1 : 0.6),
-                                }}
-                                className={cn(
-                                    "relative z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-300",
-                                    hub.isHub ? "w-8 h-8 md:w-10 md:h-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]" : "w-4 h-4 md:w-5 md:h-5"
-                                )}
-                            >
-                                <div className="w-full h-full bg-[#4A90E2] drop-shadow-sm" style={{ WebkitMaskImage: 'url(/Untitled-1.svg)', WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center', maskImage: 'url(/Untitled-1.svg)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }} />
-                            </motion.div>
+                            {hub.isHub ? (
+                                /* Morocco HQ — Dreamaker logo marker */
+                                <motion.div
+                                    animate={{ scale: isActive ? 1.2 : 1, opacity: 1 }}
+                                    className="relative z-10 -translate-x-1/2 -translate-y-1/2 w-7 h-7 md:w-9 md:h-9 drop-shadow-[0_0_14px_rgba(255,255,255,0.18)] transition-all duration-300"
+                                >
+                                    <div className="w-full h-full bg-[#111827]" style={{ WebkitMaskImage: 'url(/Untitled-1.svg)', WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center', maskImage: 'url(/Untitled-1.svg)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }} />
+                                </motion.div>
+                            ) : (
+                                /* Global destination — minimalist solid dot */
+                                <motion.div
+                                    animate={{ scale: isActive ? 1.6 : 1, opacity: isActive ? 1 : 0.7 }}
+                                    className="relative z-10 -translate-x-1/2 -translate-y-1/2 transition-all duration-300"
+                                >
+                                    <svg width="8" height="8" viewBox="-4 -4 8 8">
+                                        <circle r="3" fill="#111827" />
+                                    </svg>
+                                </motion.div>
+                            )}
                         </div>
 
                         {/* Gallery Spotlight / Project Preview Card */}

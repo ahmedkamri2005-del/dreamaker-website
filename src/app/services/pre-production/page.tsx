@@ -29,7 +29,7 @@ export default function PreProductionPage() {
 
                 {/* ── RIGHT COLUMN: White — Image ── */}
                 <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 md:p-16 pt-32 lg:pt-32">
-                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none overflow-hidden shadow-2xl">
+                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
                         <Image
                             src="/images/local.png"
                             alt="Pre-Production Concept"
@@ -43,7 +43,7 @@ export default function PreProductionPage() {
             <div className="py-16" />
 
             {/* Moodboard 1: The Vision */}
-            <div className="grid grid-cols-4 grid-rows-3 h-[400px] max-w-6xl mx-auto mb-12 gap-0 rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none overflow-hidden shadow-2xl group">
+            <div className="grid grid-cols-4 grid-rows-3 h-[400px] max-w-6xl mx-auto mb-12 gap-0 rounded-sm rounded-tr-none rounded-bl-none overflow-hidden shadow-2xl group">
                 <div className="col-span-2 row-span-2 relative w-full h-full">
                     <Image src="/images/dreamaker-planning-1.jpg" alt="Planning 1" fill className="object-cover w-full h-full relative z-0 transition-all duration-500 cursor-pointer group-hover:brightness-[0.4] hover:!brightness-100 hover:scale-[1.03] hover:z-10" />
                 </div>
@@ -79,7 +79,7 @@ export default function PreProductionPage() {
             </div>
 
             {/* Moodboard 2: The Setup */}
-            <div className="grid grid-cols-4 grid-rows-3 h-[400px] max-w-6xl mx-auto mb-12 gap-0 grid-flow-dense rounded-tl-[80px] rounded-br-[80px] overflow-hidden shadow-2xl group">
+            <div className="grid grid-cols-4 grid-rows-3 h-[400px] max-w-6xl mx-auto mb-12 gap-0 grid-flow-dense rounded-sm overflow-hidden shadow-2xl group">
                 <div className="col-span-2 row-span-1 relative w-full h-full">
                     <Image src="/images/dreamaker-setup-1.jpg" alt="Setup 1" fill className="object-cover w-full h-full relative z-0 transition-all duration-500 cursor-pointer group-hover:brightness-[0.4] hover:!brightness-100 hover:scale-[1.03] hover:z-10" />
                 </div>
@@ -115,7 +115,7 @@ export default function PreProductionPage() {
             </div>
 
             {/* Moodboard 3: The Locations */}
-            <div className="grid grid-cols-4 grid-rows-3 h-[400px] max-w-6xl mx-auto mb-12 gap-0 grid-flow-dense rounded-tl-[80px] rounded-br-[80px] overflow-hidden shadow-2xl group">
+            <div className="grid grid-cols-4 grid-rows-3 h-[400px] max-w-6xl mx-auto mb-12 gap-0 grid-flow-dense rounded-sm overflow-hidden shadow-2xl group">
                 <div className="col-span-3 row-span-1 relative w-full h-full">
                     <Image src="/images/dreamaker-action-logistics.jpg" alt="Locations 1" fill className="object-cover w-full h-full relative z-0 transition-all duration-500 cursor-pointer group-hover:brightness-[0.4] hover:!brightness-100 hover:scale-[1.03] hover:z-10" />
                 </div>
@@ -154,7 +154,7 @@ export default function PreProductionPage() {
             <div className="flex justify-center pb-24">
                 <Link
                     href="/contact"
-                    className="inline-block px-8 py-3 bg-white text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-tl-[20px] rounded-br-[20px] rounded-tr-none rounded-bl-none transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-lg"
+                    className="inline-block px-8 py-3 bg-white text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-sm transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-lg"
                 >
                     LET&apos;S TALK
                 </Link>

@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     const navBgClass = scrolled
         ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100'
@@ -34,11 +35,12 @@ export default function Navbar() {
     }, [isOpen]);
 
     const navLinks = [
-        { name: 'Work', path: '/#work', id: 'work', isAnchor: true },
-        { name: 'Services', path: '/#services', id: 'services', isAnchor: true },
-        { name: 'Locations', path: '/#locations', id: 'locations', isAnchor: true },
-        { name: 'About', path: '/#who-we-are', id: 'who-we-are', isAnchor: true },
-        { name: 'Contact', path: '/contact', isAnchor: false }
+        { name: 'Work', path: '#', isAnchor: false },
+        { name: 'Press', path: '#', isAnchor: false },
+        { name: 'Services', path: '#', id: 'services', isAnchor: true },
+        { name: 'Locations', path: '#', isAnchor: false },
+        { name: 'About', path: '#', id: 'who-we-are', isAnchor: true },
+        { name: 'Contact', path: '#', isAnchor: false }
     ];
 
     const lineColor = isOpen ? 'bg-white' : (useWhiteText ? 'bg-white' : 'bg-black');
@@ -49,7 +51,7 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
                     {/* Left Side: Logo Placeholder */}
                     <div className="flex items-center">
-                        <Link href="/" className="inline-block relative z-20">
+                        <Link href="#" className="inline-block relative z-20">
                             <img src={isOpen ? "/logowhite.svg" : "/Untitled-1.svg"} alt="Dreamaker Productions Logo" className={`${scrolled ? 'h-10 md:h-12' : 'h-20 md:h-24'} w-auto object-contain transition-all duration-300 ease-in-out`} />
                         </Link>
                     </div>
@@ -61,15 +63,15 @@ export default function Navbar() {
                                 <a
                                     key={link.id}
                                     href={link.path}
-                                    className={`text-[10px] md:text-sm uppercase tracking-widest font-bold transition-colors duration-300 hover:text-[#52B4E5] ${useWhiteText ? 'text-gray-300' : 'text-black'}`}
+                                    className={`text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:text-white ${useWhiteText ? 'text-gray-300' : 'text-black'}`}
                                 >
                                     {link.name}
                                 </a>
                             ) : (
                                 <Link
-                                    key={link.path}
+                                    key={link.name}
                                     href={link.path}
-                                    className={`text-[10px] md:text-sm uppercase tracking-widest font-bold transition-colors duration-300 hover:text-[#52B4E5] ${useWhiteText ? 'text-gray-300' : 'text-black'}`}
+                                    className={`text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 hover:text-white ${useWhiteText ? 'text-gray-300' : 'text-black'}`}
                                 >
                                     {link.name}
                                 </Link>
@@ -111,7 +113,7 @@ export default function Navbar() {
                                 </a>
                             ) : (
                                 <Link
-                                    key={link.path}
+                                    key={link.name}
                                     href={link.path}
                                     onClick={() => setIsOpen(false)}
                                     className="text-4xl md:text-6xl font-black text-white mb-8 hover:text-[#52B4E5] transition-colors duration-300 uppercase tracking-widest text-center"

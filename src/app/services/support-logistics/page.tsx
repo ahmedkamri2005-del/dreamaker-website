@@ -26,7 +26,7 @@ export default function SupportLogisticsPage() {
 
                 {/* ── RIGHT COLUMN: White — Image ── */}
                 <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 md:p-16 pt-32 lg:pt-32">
-                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-tl-[80px] rounded-br-[80px] rounded-tr-none rounded-bl-none overflow-hidden shadow-2xl">
+                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-sm rounded-tr-none rounded-bl-none overflow-hidden shadow-2xl">
                         <Image
                             src="/images/fly.png"
                             alt="Logistics Operations"
@@ -51,7 +51,7 @@ export default function SupportLogisticsPage() {
                         </p>
                     </div>
 
-                    <div className="grid group grid-cols-4 grid-rows-2 h-[400px] max-w-7xl mx-auto mb-16 rounded-tl-[80px] rounded-br-[80px] overflow-hidden gap-0 bg-white shadow-2xl">
+                    <div className="grid group grid-cols-4 grid-rows-2 h-[400px] max-w-7xl mx-auto mb-16 rounded-sm overflow-hidden gap-0 bg-white shadow-2xl">
                         <div className="col-span-2 row-span-2 relative z-0 transition-all duration-500 cursor-pointer group-hover:brightness-[0.3] hover:!brightness-100 hover:scale-[1.03] hover:z-10">
                             <Image src="/logistic/dreamaker-armored-vehicle.jpg" alt="Armored Vehicle" fill className="w-full h-full object-cover" />
                         </div>
@@ -113,7 +113,7 @@ export default function SupportLogisticsPage() {
                 <div className="flex justify-center mt-20 pb-24">
                     <Link
                         href="/contact"
-                        className="inline-block px-10 py-4 bg-transparent text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-tl-[20px] rounded-br-[20px] rounded-tr-none rounded-bl-none transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-[0_0_20px_rgba(82,180,229,0.1)] hover:shadow-[0_0_40px_rgba(82,180,229,0.3)]"
+                        className="inline-block px-10 py-4 bg-transparent text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-sm rounded-tr-none rounded-bl-none transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-[0_0_20px_rgba(82,180,229,0.1)] hover:shadow-[0_0_40px_rgba(82,180,229,0.3)]"
                     >
                         INITIALIZE OPERATIONS
                     </Link>
