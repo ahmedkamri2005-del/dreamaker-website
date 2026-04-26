@@ -24,7 +24,7 @@ export default function Navbar() {
             </Link>
 
             {/* Right side (Links) */}
-            <div className={`hidden md:flex gap-8 uppercase text-[11px] tracking-widest font-bold transition-colors duration-500 ${isScrolled ? 'text-black drop-shadow-none' : 'text-white drop-shadow-md'}`}>
+            <div className={`hidden md:flex gap-12 uppercase text-[15px] tracking-[0.3em] font-bold transition-colors duration-500 ${isScrolled ? 'text-black drop-shadow-none' : 'text-white drop-shadow-md'}`}>
                 <Link href="/work" className="hover:opacity-70 transition-opacity">Work</Link>
                 <Link href="/press" className="hover:opacity-70 transition-opacity">Press</Link>
                 <Link href="/services" className="hover:opacity-70 transition-opacity">Services</Link>
