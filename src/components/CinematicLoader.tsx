@@ -41,7 +41,7 @@ export default function CinematicLoader() {
         },
         exit: {
             d: targetPath,
-            transition: { duration: 1.6, ease: [0.76, 0, 0.24, 1] }
+            transition: { duration: 1.6, ease: [0.76, 0, 0.24, 1] as const }
         }
     };
 
