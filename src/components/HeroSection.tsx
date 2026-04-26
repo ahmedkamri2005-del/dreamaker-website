@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function HeroSection() {
     return (
-        <section className="relative h-screen w-full flex flex-col justify-center px-8 md:px-16 overflow-hidden">
+        <section className="relative h-[100dvh] min-h-screen w-full flex flex-col justify-center overflow-hidden">
             {/* Background Video */}
             <video
                 src="/videos/backgrounds.webm"
@@ -12,14 +12,14 @@ export default function HeroSection() {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover z-0"
+                className="absolute inset-0 w-full h-full object-cover z-0 scale-110"
             ></video>
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/40 z-10"></div>
 
             {/* Typography Content (Left-aligned, vertically centered) */}
-            <div className="relative z-20 max-w-3xl">
+            <div className="relative z-20 max-w-3xl px-8 md:px-16">
                 {/* Eyebrow */}
                 <p className="text-white text-sm tracking-[0.2em] font-bold uppercase mb-4 drop-shadow-lg">
                     Your Trusted Production Partner
