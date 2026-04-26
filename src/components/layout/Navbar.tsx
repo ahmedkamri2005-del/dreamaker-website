@@ -13,7 +13,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-500 flex items-center justify-between px-8 md:px-16 ${isScrolled ? 'bg-white shadow-lg py-4' : 'bg-transparent py-6'}`}>
+        <nav className={`absolute top-0 w-full z-50 transition-all duration-500 flex items-center justify-between px-8 md:px-16 ${isScrolled ? 'fixed bg-white shadow-lg py-4' : 'bg-transparent py-6'}`}>
             {/* Left side (Logo) */}
             <Link href="/">
                 <img

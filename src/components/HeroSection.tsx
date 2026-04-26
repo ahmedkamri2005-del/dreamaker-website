@@ -19,7 +19,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-black/40 z-10"></div>
 
             {/* Typography Content (Left-aligned, vertically centered) */}
-            <div className="relative z-20 max-w-3xl mt-12">
+            <div className="relative z-20 max-w-3xl">
                 {/* Eyebrow */}
                 <p className="text-white text-sm tracking-[0.2em] font-bold uppercase mb-4 drop-shadow-lg">
                     Your Trusted Production Partner
