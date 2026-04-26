@@ -7,53 +7,59 @@ import Image from 'next/image';
 
 export default function AwardsSection() {
     return (
-        <section className="w-full py-20 bg-[#fafafa] lg:px-20 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="w-full py-32 md:py-48 bg-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-                {/* Left Column: Refined Typography & Stats */}
-                <div className="flex flex-col text-left items-start z-10 w-full">
-                    {/* Kicker */}
-                    <h3 className="uppercase tracking-[0.2em] text-[10px] md:text-xs font-semibold text-gray-400 mb-6 transition-all duration-700">
-                        Proven Excellence
-                    </h3>
+                {/* ── LEFT: TROPHY SHOWCASE ── */}
+                <div className="relative flex items-center justify-center order-2 md:order-1">
+                    {/* Soft Warm Shadow/Glow */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,transparent_60%)] -z-10 blur-3xl scale-150"></div>
 
-                    {/* Main Headline */}
-                    <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight max-w-xl mb-12">
-                        Award-Winning Production Support Since 1999.
-                    </h2>
-
-                    {/* Stats Grid */}
-                    <div className="flex gap-12 lg:gap-20">
-                        {/* Stat 1 */}
-                        <div className="flex flex-col">
-                            <p className="text-5xl lg:text-6xl font-light text-black mb-2">25+</p>
-                            <p className="uppercase tracking-widest text-[10px] lg:text-xs text-gray-500 font-medium whitespace-nowrap">Years</p>
-                        </div>
-
-                        {/* Stat 2 */}
-                        <div className="flex flex-col">
-                            <p className="text-5xl lg:text-6xl font-light text-black mb-2">500+</p>
-                            <p className="uppercase tracking-widest text-[10px] lg:text-xs text-gray-500 font-medium whitespace-nowrap">Projects</p>
-                        </div>
-
-                        {/* Stat 3 */}
-                        <div className="flex flex-col">
-                            <p className="text-5xl lg:text-6xl font-light mb-2 text-black">1</p>
-                            <p className="uppercase tracking-widest text-[10px] lg:text-xs text-gray-500 font-medium whitespace-nowrap">Emmy® Award</p>
-                        </div>
-                    </div>
+                    {/* Floating Container */}
+                    <motion.div
+                        animate={{ y: [-15, 15, -15] }}
+                        transition={{
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="relative w-[350px] h-[500px] md:w-[500px] md:h-[700px]"
+                    >
+                        <Image
+                            src="/emmy-trophy.png"
+                            alt="Emmy Award Trophy"
+                            fill
+                            className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+                            priority
+                        />
+                    </motion.div>
                 </div>
 
-                {/* Right Column: Emmy Trophy Presentation */}
-                <div className="relative w-[300px] h-[400px] ml-auto animate-float">
-                    {/* Trophy Image - Restored with fill and object-contain */}
-                    <Image
-                        src="/emmy-trophy.png"
-                        alt="Emmy Award"
-                        fill
-                        className="object-contain"
-                    />
+                {/* ── RIGHT: GRAND TYPOGRAPHY ── */}
+                <div className="flex flex-col items-start order-1 md:order-2">
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase mb-2">
+                            Emmy®<br />
+                            Award<br />
+                            Winning
+                        </h2>
+
+                        {/* Black Accent Line */}
+                        <div className="w-20 h-1.5 bg-black mt-10 mb-8"></div>
+
+                        <p className="text-gray-600 text-lg md:text-xl max-w-lg font-light leading-relaxed">
+                            A testament to Dreamaker&apos;s unwavering commitment to world-class
+                            production excellence. We don&apos;t just create content; we craft
+                            award-winning cinematic legacies that resonate globally.
+                        </p>
+                    </motion.div>
                 </div>
+
             </div>
         </section>
     );

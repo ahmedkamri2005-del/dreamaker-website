@@ -96,8 +96,8 @@ html.lenis body {
 }
 
 body {
-  background-color: #1a1a1a;
-  color: var(--color-text-gray);
+  background-color: #FAFAFA;
+  color: #0A0A0A;
   margin: 0;
   padding: 0;
 }

@@ -10,16 +10,18 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen bg-black overflow-x-hidden">
+    <main className="w-full min-h-screen overflow-x-hidden">
       <HeroSection />
-      <LogoCarousel />
-      <AwardsSection />
-      <ServicesSection />
-      <LocationsSection />
-      <CinematicJourneySection />
-      <AboutSection />
-      <ContactSection />
-      <Footer />
+      <section className="relative z-20 bg-white w-full">
+        <LogoCarousel />
+        <AwardsSection />
+        <ServicesSection />
+        <LocationsSection />
+        <CinematicJourneySection />
+        <AboutSection />
+        <ContactSection />
+        <Footer />
+      </section>
     </main>
   );
 }

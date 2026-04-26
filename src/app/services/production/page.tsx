@@ -1,181 +1,27 @@
-"use client";
-
-import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowLeft } from 'lucide-react';
 
 export default function ProductionPage() {
     return (
-        <main className="min-h-screen bg-white text-gray-900 font-sans overflow-x-hidden pt-0">
-            {/* The "Director's View" Hero Section - Split Screen */}
-            <section className="flex flex-col lg:flex-row w-[100vw] relative left-1/2 -translate-x-1/2 min-h-screen">
-                {/* ── LEFT COLUMN: Dark Teal — Text ── */}
-                <div className="w-full lg:w-1/2 bg-[#214151] flex flex-col justify-center self-stretch min-h-screen px-12 lg:px-24 pt-32 pb-16">
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2 text-sm font-bold tracking-widest text-white hover:text-[#52B4E5] transition-colors duration-300 uppercase mb-8 w-fit"
-                    >
-                        ← BACK TO HOME
-                    </Link>
-
-                    <p className="text-[#52B4E5] font-bold tracking-[0.3em] uppercase mb-4">
-                        WHERE VISION MEETS REALITY.
-                    </p>
-                    <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-8 text-white drop-shadow-xl uppercase">
-                        PRODUCTION
-                    </h1>
+        <main className="min-h-screen bg-white text-black">
+            {/* HERO SECTION: 50/50 Split */}
+            <section className="flex flex-col md:flex-row min-h-screen pt-24 md:pt-0">
+                {/* LEFT: WHITE HALF */}
+                <div className="w-full md:w-1/2 bg-white text-black flex flex-col justify-center p-8 md:p-24 relative">
+                    <Link href="/#services" className="absolute top-32 left-8 md:left-24 text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:pr-4 transition-all">&larr; Back</Link>
+                    <h1 className="text-5xl md:text-7xl font-black uppercase mb-6 Borscha">Production</h1>
+                    <p className="text-lg md:text-xl text-gray-600 leading-relaxed">Top-tier camera crews, elite casting, and first-class equipment management. We bring your vision to life with precision and passion.</p>
                 </div>
-
-                {/* ── RIGHT COLUMN: White — Image ── */}
-                <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 md:p-16 pt-32 lg:pt-32">
-                    <div className="relative w-full max-w-[600px] max-h-[400px] lg:max-h-[500px] aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
-                        <Image
-                            src="/images/dreamaker-director-view.jpg"
-                            alt="Director View"
-                            fill
-                            className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-700 hover:scale-105"
-                        />
-                    </div>
+                {/* RIGHT: BLACK HALF */}
+                <div className="w-full md:w-1/2 bg-black relative overflow-hidden h-[50vh] md:h-screen">
+                    <img src="/studios/dulcie1 - Copy.jpeg" alt="Production" className="w-full h-full object-cover opacity-80" />
                 </div>
             </section>
 
-            {/* Section Title */}
-            <div className="py-16 text-center w-full">
-                <h2 className="text-4xl font-bold tracking-widest text-black">WORLD-CLASS ARSENAL</h2>
-            </div>
-
-            {/* WORLD-CLASS ARSENAL — Page 7 Split-Screen Layout */}
-            <section className="flex flex-col lg:flex-row w-[100vw] relative left-1/2 -translate-x-1/2">
-                {/* ── LEFT COLUMN: White — Techno Cranes ── */}
-                <div className="w-full lg:w-1/2 bg-white flex flex-col justify-center items-center py-8 lg:py-12 px-8">
-                    {/* Leaf-shaped bordered frame */}
-                    <div className="w-full max-w-[350px] lg:max-w-[380px] aspect-square border-[6px] border-[#214151] rounded-sm flex items-center justify-center p-4 bg-white overflow-hidden">
-                        <Image
-                            src="/material/img104.jpg"
-                            alt="Techno Cranes"
-                            width={340}
-                            height={340}
-                            className="w-full h-full object-contain mix-blend-multiply"
-                        />
-                    </div>
-                    <h3 className="mt-4 text-[#214151] font-bold uppercase tracking-widest text-xl text-right w-full max-w-[350px] lg:max-w-[380px]">
-                        TECHNO CRANES
-                    </h3>
-                </div>
-
-                {/* ── RIGHT COLUMN: Dark Teal — 2×2 Grid ── */}
-                <div className="w-full lg:w-1/2 bg-[#214151] flex flex-col justify-center items-center py-8 lg:py-12 px-8 lg:px-16">
-                    {/* Intro text */}
-                    <p className="text-white font-bold text-lg mb-6 max-w-md leading-relaxed text-center lg:text-left">
-                        Equipment solutions in Morocco, with camera, grip and lighting support tailored to each production.
-                    </p>
-
-                    {/* 2×2 leaf grid */}
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-4 max-w-md w-full">
-
-                        {/* Item 1 — Camera Packages */}
-                        <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-sm flex items-center justify-center p-2 overflow-hidden">
-                                <Image
-                                    src="/material/dreamaker-camera-packages.jpg"
-                                    alt="Camera Packages"
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-full object-contain mix-blend-multiply"
-                                />
-                            </div>
-                            <h4 className="mt-2 text-white font-bold tracking-widest uppercase text-sm text-center">
-                                CAMERA PACKAGES
-                            </h4>
-                        </div>
-
-                        {/* Item 2 — Lenses */}
-                        <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-sm flex items-center justify-center p-2 overflow-hidden">
-                                <Image
-                                    src="/material/dreamaker-lenses.jpg"
-                                    alt="Lenses"
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-full object-contain mix-blend-multiply"
-                                />
-                            </div>
-                            <h4 className="mt-2 text-white font-bold tracking-widest uppercase text-sm text-center">
-                                LENSES
-                            </h4>
-                        </div>
-
-                        {/* Item 3 — Dollies */}
-                        <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-sm flex items-center justify-center p-2 overflow-hidden">
-                                <Image
-                                    src="/material/dreamaker-dollies.jpg"
-                                    alt="Dollies"
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-full object-contain mix-blend-multiply"
-                                />
-                            </div>
-                            <h4 className="mt-2 text-white font-bold tracking-widest uppercase text-sm text-center">
-                                DOLLIES
-                            </h4>
-                        </div>
-
-                        {/* Item 4 — Lighting */}
-                        <div className="flex flex-col items-center">
-                            <div className="w-full aspect-square bg-white rounded-tl-[40px] rounded-br-[40px] rounded-tr-none rounded-bl-none flex items-center justify-center p-2 overflow-hidden">
-                                <Image
-                                    src="/material/dreamaker-lighting.jpg"
-                                    alt="Lighting"
-                                    width={200}
-                                    height={200}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                            <h4 className="mt-2 text-white font-bold tracking-widest uppercase text-sm text-center">
-                                LIGHTING
-                            </h4>
-                        </div>
-
-                    </div>
-                </div>
+            {/* REST OF THE PAGE: Standard White Layout */}
+            <section className="py-24 px-8 md:px-24 bg-white text-black">
+                <h2 className="text-3xl font-bold uppercase mb-8">Detailed Services</h2>
+                <p className="text-gray-600 max-w-3xl text-lg">On-set management, technical crew coordination, and full-scale equipment rentals. We handle the heavy lifting while you focus on the art.</p>
             </section>
-
-            {/* Action Logistics & Builds Section */}
-            <div className="py-16 max-w-7xl mx-auto px-4 mb-16">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold tracking-widest text-black">ACTION LOGISTICS & STUDIOS</h2>
-                    <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
-                        Executing complex, high-octane sequences and massive set builds safely across diverse physical environments.
-                    </p>
-                </div>
-
-                <div className="relative w-full h-[500px] rounded-sm overflow-hidden group border border-gray-800 shadow-2xl">
-                    <Image
-                        src="/images/dreamaker-action-logistics.jpg"
-                        alt="Action Logistics"
-                        fill
-                        className="object-cover transition-transform duration-[2000ms] group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-700" />
-
-                    <div className="absolute bottom-16 left-8 md:left-16 z-20">
-                        <p className="text-[#52B4E5] font-bold tracking-[0.2em] uppercase mb-2">Uncompromising Scale</p>
-                        <h3 className="text-3xl md:text-5xl font-extrabold text-white">Massive Builds</h3>
-                    </div>
-                </div>
-            </div>
-
-            {/* Final CTA */}
-            <div className="flex justify-center pb-24">
-                <Link
-                    href="/contact"
-                    className="inline-block px-10 py-4 bg-transparent text-[#52B4E5] border-2 border-[#52B4E5] font-extrabold uppercase tracking-widest text-sm rounded-sm transition-all duration-300 hover:bg-[#52B4E5] hover:text-white shadow-[0_0_20px_rgba(82,180,229,0.1)] hover:shadow-[0_0_40px_rgba(82,180,229,0.3)]"
-                >
-                    INITIALIZE PRODUCTION
-                </Link>
-            </div>
         </main>
     );
 }

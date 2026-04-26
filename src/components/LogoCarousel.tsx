@@ -41,7 +41,7 @@ export default function LogoCarousel() {
     };
 
     return (
-        <section id="work" className="w-full max-w-[100vw] bg-white pt-16 pb-0 md:pt-20 md:pb-0 overflow-hidden relative scroll-mt-20">
+        <section id="work" className="w-full max-w-[100vw] bg-white pt-10 pb-0 md:pt-12 md:pb-0 overflow-hidden relative scroll-mt-20">
             {/* Title */}
             <div className="relative z-20 max-w-7xl mx-auto px-6 mb-16 flex justify-center">
                 <span className="text-gray-600 uppercase tracking-[0.3em] font-medium text-[8px] md:text-xs">

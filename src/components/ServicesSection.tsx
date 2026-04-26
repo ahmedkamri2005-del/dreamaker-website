@@ -10,19 +10,19 @@ const servicesList = [
         title: 'Pre-Production',
         desc: 'Line producing, budgeting, permits, and tax rebate facilitation.',
         img: '/images/dreamaker-planning-3.jpg',
-        link: '#'
+        link: '/services/pre-production'
     },
     {
         title: 'Production',
         desc: 'Equipment, studios, built sets, and highly experienced crews.',
         img: '/images/dreamaker-setup-6.jpg',
-        link: '#'
+        link: '/services/production'
     },
     {
         title: 'Support & Logistics',
         desc: 'Transport, security, drone coordination, and action support.',
         img: '/locali/merzouga.jpg',
-        link: '#'
+        link: '/services/support'
     }
 ];
 
