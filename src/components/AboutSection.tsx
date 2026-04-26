@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function AboutSection() {
     return (
-        <section id="who-we-are" className="w-full py-32 bg-white text-black relative scroll-mt-20">
+        <section id="who-we-are" className="w-full py-16 bg-white text-black relative scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
                 {/* ── Left Column: Typography ── */}

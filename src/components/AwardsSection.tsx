@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function AwardsSection() {
     return (
-        <section className="w-full py-32 md:py-48 bg-white relative overflow-hidden">
+        <section className="w-full h-screen flex items-center justify-center bg-white relative overflow-hidden py-0">
             <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
                 {/* ── LEFT: TROPHY SHOWCASE ── */}
@@ -43,7 +43,7 @@ export default function AwardsSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase mb-2">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[0.9] tracking-tighter uppercase mb-2">
                             Emmy®<br />
                             Award<br />
                             Winning

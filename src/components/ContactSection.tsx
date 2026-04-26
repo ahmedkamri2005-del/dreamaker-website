@@ -7,7 +7,7 @@ import Footer from './layout/Footer';
 
 export default function ContactSection() {
     return (
-        <section id="contact-section" className="py-32 bg-[#fafafa] text-center px-6 relative scroll-mt-32">
+        <section id="contact-section" className="py-16 bg-[#fafafa] text-center px-6 relative scroll-mt-32">
             <div className="max-w-7xl mx-auto text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -19,7 +19,7 @@ export default function ContactSection() {
                         GET IN TOUCH
                     </span>
 
-                    <h2 className="text-5xl lg:text-7xl font-light text-gray-900 mb-8 tracking-tight">
+                    <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-8 tracking-tight">
                         Let's Create Together.
                     </h2>
 

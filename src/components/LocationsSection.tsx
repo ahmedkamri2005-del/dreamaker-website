@@ -16,7 +16,7 @@ export default function LocationsSection() {
     const [hoveredCity, setHoveredCity] = useState<number | null>(null);
 
     return (
-        <section className="relative w-full min-h-[80vh] flex items-center justify-center bg-black overflow-hidden py-32">
+        <section className="relative w-full min-h-[80vh] flex items-center justify-center bg-black overflow-hidden py-16">
 
             {/* Background Image Layer — crossfades per hovered city */}
             {globalHubs.map((hub, index) => (
@@ -65,7 +65,7 @@ export default function LocationsSection() {
                             className="cursor-pointer py-2 lg:py-4 w-full text-center group"
                         >
                             <h2
-                                className={`text-5xl lg:text-8xl font-light uppercase tracking-tight transition-colors duration-500 select-none ${hoveredCity === index
+                                className={`text-4xl lg:text-5xl font-light uppercase tracking-tight transition-colors duration-500 select-none ${hoveredCity === index
                                     ? 'text-white'
                                     : hoveredCity === null
                                         ? 'text-gray-500'

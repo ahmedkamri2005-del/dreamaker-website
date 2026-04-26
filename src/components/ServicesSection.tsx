@@ -30,7 +30,7 @@ export default function ServicesSection() {
     const [activeService, setActiveService] = useState(0);
 
     return (
-        <section id="services" className="py-32 bg-white scroll-mt-20">
+        <section id="services" className="py-16 bg-white scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16 lg:gap-8 items-center min-h-[80vh]">
 
                 {/* Left Column: The Interactive List */}
@@ -46,7 +46,7 @@ export default function ServicesSection() {
                                 onMouseEnter={() => setActiveService(index)}
                                 className="border-b border-gray-100 py-10 cursor-pointer group last:border-0"
                             >
-                                <h3 className={`text-4xl lg:text-6xl font-light tracking-tight transition-colors duration-500 ${activeService === index ? 'text-black' : 'text-gray-300 group-hover:text-gray-400'}`}>
+                                <h3 className={`text-3xl lg:text-4xl font-light tracking-tight transition-colors duration-500 ${activeService === index ? 'text-black' : 'text-gray-300 group-hover:text-gray-400'}`}>
                                     {service.title}
                                 </h3>
 

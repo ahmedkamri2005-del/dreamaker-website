@@ -26,7 +26,7 @@ export default function HeroSection() {
                 </p>
 
                 {/* Main Title */}
-                <h1 className="text-white text-5xl md:text-7xl font-medium leading-tight mb-6 drop-shadow-xl">
+                <h1 className="text-white text-4xl md:text-6xl font-medium leading-tight mb-6 drop-shadow-xl">
                     Elevating Global Narratives<br />
                     in Morocco.
                 </h1>

@@ -8,7 +8,7 @@ export default function SupportPage() {
                 {/* LEFT: WHITE HALF */}
                 <div className="w-full md:w-1/2 bg-white text-black flex flex-col justify-center p-8 md:p-24 relative">
                     <Link href="/#services" className="absolute top-32 left-8 md:left-24 text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:pr-4 transition-all">&larr; Back</Link>
-                    <h1 className="text-5xl md:text-7xl font-black uppercase mb-6 Borscha">Support & Logistics</h1>
+                    <h1 className="text-4xl md:text-6xl font-black uppercase mb-6 Borscha">Support & Logistics</h1>
                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed">Logistical architecture, exclusive location access, and international-standard crew support for studios and agencies worldwide.</p>
                 </div>
                 {/* RIGHT: BLACK HALF */}

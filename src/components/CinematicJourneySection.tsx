@@ -50,7 +50,7 @@ export default function CinematicJourneySection() {
     };
 
     return (
-        <section className="py-32 bg-white text-black relative overflow-hidden">
+        <section className="py-16 bg-white text-black relative overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
