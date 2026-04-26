@@ -7,15 +7,20 @@ import { urlFor } from '@/sanity/lib/image';
 export const revalidate = 0;
 
 async function getPressArticles() {
-    const query = `*[_type == "press" && status == "published"] | order(coalesce(orderRank, 9999) asc, publishedAt desc) {
-      _id,
-      title,
-      sourceName,
-      publishedAt,
-      externalLink,
-      mainImage
-    }`;
-    return await client.fetch(query);
+    try {
+        const query = `*[_type == "press" && status == "published"] | order(coalesce(orderRank, 9999) asc, publishedAt desc) {
+          _id,
+          title,
+          sourceName,
+          publishedAt,
+          externalLink,
+          mainImage
+        }`;
+        return await client.fetch(query);
+    } catch (error) {
+        console.error("Sanity fetch error:", error);
+        return [];
+    }
 }
 
 export default async function PressPage() {
